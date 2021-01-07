@@ -2,7 +2,7 @@ import { SIGN_IN, SIGN_OUT } from "../actions/types";
 
 const INITAL_STATE = {
   isSignedIn: null,
-  useId: null,
+  userId: null,
 };
 
 const authReducer = (state = INITAL_STATE, action) => {
