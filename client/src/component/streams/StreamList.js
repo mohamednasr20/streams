@@ -11,7 +11,7 @@ const StreamList = ({ fetchStreams, streams, currentUserId, isSignedIn }) => {
   const AdminRender = (id) => {
     return (
       <div className="right floated content">
-        <Link to={`/stream/edit/${id}`} className="ui button primary">
+        <Link to={`/streams/edit/${id}`} className="ui button primary">
           Edit
         </Link>
         <button className="ui button negative">Delete</button>
@@ -37,7 +37,7 @@ const StreamList = ({ fetchStreams, streams, currentUserId, isSignedIn }) => {
       <div className="ui celled list">{listStreams}</div>
       {isSignedIn && (
         <div style={{ textAlign: "right" }}>
-          <Link className="ui button primary" to="/stream/new">
+          <Link className="ui button primary" to="/streams/new">
             Create Stream
           </Link>
         </div>
