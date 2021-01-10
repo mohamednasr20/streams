@@ -8,17 +8,21 @@ const StreamList = ({ fetchStreams, streams, currentUserId, isSignedIn }) => {
     fetchStreams();
   }, []);
 
-  const AdminRender = (
-    <div className="right floated content">
-      <button className="ui button primary">Edit</button>
-      <button className="ui button negative">Delete</button>
-    </div>
-  );
+  const AdminRender = (id) => {
+    return (
+      <div className="right floated content">
+        <Link to={`/stream/edit/${id}`} className="ui button primary">
+          Edit
+        </Link>
+        <button className="ui button negative">Delete</button>
+      </div>
+    );
+  };
 
   const listStreams = streams.map((stream) => {
     return (
       <div className="item" key={stream.id}>
-        {stream.userId === currentUserId && AdminRender}
+        {stream.userId === currentUserId && AdminRender(stream.id)}
         <i className="large middle aligned icon camera"></i>
         <div className="content">
           {stream.title}
@@ -33,7 +37,9 @@ const StreamList = ({ fetchStreams, streams, currentUserId, isSignedIn }) => {
       <div className="ui celled list">{listStreams}</div>
       {isSignedIn && (
         <div style={{ textAlign: "right" }}>
-          <Link to="/stream/new">Create Stream</Link>
+          <Link className="ui button primary" to="/stream/new">
+            Create Stream
+          </Link>
         </div>
       )}
     </div>

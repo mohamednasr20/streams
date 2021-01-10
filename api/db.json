@@ -20,6 +20,12 @@
       "description": "i have id",
       "userId": "106304748335565312939",
       "id": 4
+    },
+    {
+      "title": "programatic navigation",
+      "description": "you should see me in stream list",
+      "userId": "106304748335565312939",
+      "id": 5
     }
   ]
 }
