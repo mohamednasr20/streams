@@ -23,13 +23,10 @@ const StreamForm = (props) => {
   };
 
   const onSubmit = (formValues) => {
-    onSubmit(formValues);
+    props.onSubmit(formValues);
   };
   return (
-    <form
-      onSubmit={props.handleSubmit(props.onSubmit)}
-      className="ui form error"
-    >
+    <form onSubmit={props.handleSubmit(onSubmit)} className="ui form error">
       <Field name="title" component={renderInput} label="Enter Title" />
       <Field
         name="description"
